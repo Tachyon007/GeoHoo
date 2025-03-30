@@ -1,0 +1,96 @@
+
+:root{
+
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.boxWrapper{
+    position: relative;
+    display: flex;
+
+    width: 200svw;
+    transition-duration: 0.5s;
+    overflow-x: hidden;
+    padding-bottom: 3rem;
+}
+
+
+#loginBox, .loginBox{
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    
+    margin-top: 25px;
+
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid;
+    border-radius: 0.4em
+}
+
+.inputBox{
+    position: relative;
+    width: 75%;
+    left: 12.5%;
+    margin-top: 5%;
+    border: 1px solid;
+    overflow: hidden;
+
+}
+.inputBox i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    transition: 0.5s;
+    pointer-events: none;
+}
+input, select{
+    position: relative;
+    width: 95%;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: var(--base-c2);
+    color: var(--feature-c1);
+
+}
+
+.inputBox input:focus ~ i,.inputBox input:valid ~ i{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+}
+
+#loginButton, .loginButton{
+    position: relative;
+    width: 75%;
+    left: 12.5%;
+    margin-top: 5%;
+    color: #fefefe;
+    background-color: rgb(5, 5, 5);
+    
+    cursor: pointer;
+    
+    transition-duration: 0.5s;
+    border-radius: 0.25rem;
+}
+#loginButton:hover{
+    background-color: #c9c9c9;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoHoo 🌍</title>
+
+    <script src="./tabOverhead.js?v=0.02"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v10.4.0/dist/ol.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.4.0/ol.css">
+
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+   
+    <section id="mapSection" class="tabContent tabSelected">
+        <div id="userIcon" style="position: absolute;">
+            <img src="https://orellion.com/GeoHoo/assets/images/default.png"
+                style="position: absolute; z-index: 10; width: 100%; aspect-ratio: 1 / 1;">
+        </div>
+
+        <div id="map"></div>
+        <script type="module" src="./main.js"></script>
+    </section>
+
+    <section id="cameraSection" class="tabContent">
+        <div class="modal-content" id="imgModal" style="display: none;">
+            <img id="previewImage" src="https://orellion.com/GeoHoo/assets/images/default.png" alt="Captured Image" style="width: 100%;">
+            
+            <textarea id="postText" style="width: 213px; resize: vertical; height: 60px;" placeholder="Add some text!"></textarea>
+            <div class="modal-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div id="accpetButton" onclick="" style="color: rgb(85, 0, 212); border: 2px solid; border-radius: 0.5rem; padding: 0.5rem;">
+                            <span class="material-icons">
+                                upload
+                            </span>
+                            <div>Accept</div>
+                        </div>
+                        <div onclick="document.getElementById('imgModal').style.display = 'none'" style="color: rgb(212, 32, 0); border: 2px solid; border-radius: 0.5rem; padding: 0.5rem;">
+                            <span class="material-icons">
+                                upload
+                            </span>
+                            <div>Discard</div>
+                        </div>
+                    </div>
+        </div>
+
+        <video id="camera" autoplay playsinline style="width: 100%;"></video>
+        <div class="takePicButton" onclick="takePicture()"></div>
+    </section>
+
+    <section id="exploreSection" class="tabContent">
+        <div id="nearestFeatsSearch">
+            <div style="text-align: center; padding-top: 1rem;">nearest feature</div>
+            <div style="margin-top: 20vh; position: relative;">
+                <div class="exploreCircle">
+                    <div id="postDist" class="exploreCircleContent">3.3m</div>
+                </div>
+            </div>
+        </div>
+       
+
+        <div id="postArea" style="margin-bottom: 6rem;">
+            <div class="postDisplay">
+                <div>
+                    <img src="https://orellion.com/GeoHoo/assets/images/default.png" style="width: 100%;">
+                </div>
+                <div>
+                    text
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="settingsSection" class="tabContent" style="padding: 1rem;">
+        <div onclick="window.location.replace('../login/index.html')" style="color: rgb(212, 32, 0); border: 2px solid; border-radius: 0.5rem; padding: 0.5rem; display: flex;     position: relative;">
+            <span class="material-icons" style="position: absolute; top: 6px;">
+                logout
+            </span>
+            <div style="position: relative; left: 50%; transform: translate(-50%, 0);">Log out</div>
+        </div>
+    </section>
+
+    <section class="tabBar">
+        <div class="tabItem selectedTabItem" onclick="updateSelectedTab(this, 'mapSection')">
+            <span class="material-icons">
+                public
+            </span>
+        </div>
+        <div class="tabItem" onclick="updateSelectedTab(this, 'cameraSection'); startCamera();">
+            <span class="material-icons">
+                photo_camera
+            </span>
+        </div>
+        <div class="tabItem" onclick="updateSelectedTab(this, 'exploreSection')">
+            <span class="material-icons">
+                explore
+            </span>
+        </div>
+        <div class="tabItem" onclick="updateSelectedTab(this, 'settingsSection')">
+            <span class="material-icons">
+                settings
+            </span>
+        </div>
+
+    </section>
+</body>
+
+</html>

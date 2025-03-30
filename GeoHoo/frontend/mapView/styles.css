@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.contentContainer{
+    position: relative;
+    max-height: 35%;
+
+}
+
+
+#userIcon{
+    position: absolute;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+
+    border: 2px solid #7700ff;
+    border-radius: 100%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.tabContent{
+    display: none;
+}
+.tabSelected{
+    display: block;
+}
+
+.tabBar{
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+
+    z-index: 99;
+    gap: 10px;
+    background-color: rgb(252, 252, 252);
+}
+.tabItem{
+    flex: 1; /* Take equal space */
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid;
+
+}
+.selectedTabItem{
+    color: rgb(85, 0, 212);
+    border-bottom: 2px solid;
+}
+
+
+
+
+.exploreCircle{
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transform: translate(-50%, 0%);
+    border: 1px solid;
+    left: 50%;
+    position: relative;
+}
+.exploreCircleContent{
+    left: 50%;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+
+
+
+
+
+
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    z-index: 999;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+    margin: 1rem;
+}
+
+.modal-buttons {
+    margin-top: 10px;
+}
+
+.modal-buttons button {
+    margin: 0 5px;
+}
+
+
+.takePicButton{
+    position: absolute;
+    bottom: 5rem;
+
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    z-index: 5;
+
+    border: 2px solid rgb(37, 37, 37);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.postDisplay{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+}
